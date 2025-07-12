@@ -1,4 +1,4 @@
-import { app, shell, BrowserWindow, ipcMain, desktopCapturer, session } from 'electron';
+import { app, shell, BrowserWindow, ipcMain } from 'electron';
 import { join } from 'path';
 
 const isDev = process.env.DEV != undefined;
@@ -11,7 +11,7 @@ function createWindow() {
         autoHideMenuBar: true,
         frame: true,
         webPreferences: {
-            preload: join(__dirname, 'preload.cjs'),
+            preload: join(__dirname, 'preload.mjs'),
             spellcheck: false,
             nodeIntegration: true,// for allowing preload js to use node api
             contextIsolation: true,
