@@ -1,4 +1,4 @@
-const { contextBridge, ipcRenderer, clipboard, desktopCapturer } = require('electron');
+import { contextBridge, ipcRenderer, clipboard, desktopCapturer } from 'electron';
 
 contextBridge.exposeInMainWorld('ipcBridge', {
     receive: (channel, callback) => {

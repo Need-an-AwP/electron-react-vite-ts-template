@@ -1,5 +1,5 @@
-const { app, shell, BrowserWindow, ipcMain, desktopCapturer, session } = require('electron')
-const path = require('path')
+import { app, shell, BrowserWindow, ipcMain, desktopCapturer, session } from 'electron';
+import { join } from 'path';
 
 const isDev = process.env.DEV != undefined;
 let mainWindow;
@@ -11,7 +11,7 @@ function createWindow() {
         autoHideMenuBar: true,
         frame: true,
         webPreferences: {
-            preload: path.join(__dirname, 'preload.cjs'),
+            preload: join(__dirname, 'preload.cjs'),
             spellcheck: false,
             nodeIntegration: true,// for allowing preload js to use node api
             contextIsolation: true,
@@ -54,7 +54,7 @@ function createWindow() {
         mainWindow.loadURL('http://localhost:5173')// load vite dev server
         mainWindow.webContents.openDevTools({ mode: 'detach' })
     } else {
-        mainWindow.loadFile(path.join(__dirname, '../dist/index.html'))
+        mainWindow.loadFile(join(__dirname, '../dist/index.html'))
         mainWindow.webContents.openDevTools({ mode: 'detach' })
     }
 }
