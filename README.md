@@ -6,3 +6,9 @@ default configure:
 - vite
 - react
 - typescript
+
+```
+git clone .
+yarn
+yarn add:shadcn
+```
