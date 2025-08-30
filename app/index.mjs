@@ -14,7 +14,7 @@ function createWindow() {
         autoHideMenuBar: true,
         frame: true,
         webPreferences: {
-            preload: join(__dirname, 'preload.mjs'),
+            preload: join(__dirname, 'preload.cjs'),
             spellcheck: false,
             nodeIntegration: true,// for allowing preload js to use node api
             contextIsolation: true,
